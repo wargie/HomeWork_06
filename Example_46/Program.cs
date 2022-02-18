@@ -1,28 +1,26 @@
 ﻿//Задача 46.Написать программу масштабирования фигуры
 
-int ScalingFactor = 2;                                                          // коэффициент масштабирования
-int[] pointA = { 1, 1 };                                            // координаты точек
+int ScalingFactor = 2;                                                          
+int[] pointA = { 1, 1 };
 int[] pointB = { 2, 3 };
 int[] pointC = { 5, 3 };
-int[] pointD = { 4, 1 };
-char[] pointName = { 'A', 'B', 'C', 'D' };
+char[] pointName = { 'A', 'B', 'C' };
 
-Console.WriteLine($"Задан коэффициант масшатирования, равный {ScalingFactor}");
+//Console.WriteLine($"Задан коэффициант масшатирования, равный {ScalingFactor}");
 
-int[,] GotNewCoords(int[] a, int[] b, int[] c, int[] d, int ScalingFactor)       // пересчитываем координаты (умножаем на коэффициент), кроме координат точки А (левый нижний угол), эта точка не смещается
+int[,] GotNewCoords(int[] a, int[] b, int[] c, int ScalingFactor)
 
     {
-        int[,] coor = new int[4, 2];                                    // для вывода всех координат записываем их в двумерный массив
-        for (int ii = 0; ii < 2; ii++)                                  // индекс массива - координаты точки
+        int[,] coor = new int[3, 2];                                   
+        for (int ii = 0; ii < 2; ii++)                                  
             {
-                for (int j = 0; j < 2; j++)                                 // индекс столбцов, индексы строк задаем ниже вручную,
+                for (int j = 0; j < 2; j++)                                 
                     {
-                        if (ii == j)                                            // индекс столбца равен индексу координаты точки
+                        if (ii == j)                                            
                             {
-                                coor[0, j] = a[ii];                                 // здесь задаем новые координаты с поправкой на неподвижную точку А
+                                coor[0, j] = a[ii];                                 
                                 coor[1, j] = (b[ii] - a[ii]) * ScalingFactor + a[ii];
                                 coor[2, j] = (c[ii] - a[ii]) * ScalingFactor + a[ii];
-                                coor[3, j] = (d[ii] - a[ii]) * ScalingFactor + a[ii];
                             }
                     }
             }
@@ -43,8 +41,6 @@ void PrintCords(int[,] arr, char[] point)
             }
     }
 
-
-
 Console.WriteLine();
-int[,] newCords = GotNewCoords(pointA, pointB, pointC, pointD, ScalingFactor);
+int[,] newCords = GotNewCoords(pointA, pointB, pointC, ScalingFactor);
 PrintCords(newCords, pointName);
