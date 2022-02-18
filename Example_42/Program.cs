@@ -9,8 +9,7 @@ for (int i = 0; i < volume; i++)
     {
         Console.Write($"Введите число {i + 1}: ");
         int x = int.Parse(Console.ReadLine());
-        if (x > 0)
-            count++;
+        if (x > 0) count++;
     }
 
 Console.WriteLine($"С клавиатуры введено {count} чисел больше ноля");
