@@ -13,7 +13,7 @@ var k1 = int.Parse(Console.ReadLine());
 Console.Write("Введите значение k2: ");
 var k2 = int.Parse(Console.ReadLine());
 
-int x = (b2 - b1)/(k1 - k2);
-int y = (k1 * (b2 - b1)/(k1 - k2) + b1);
+var x = (b2 - b1)/(k1 - k2);
+var y = (k1 * (b2 - b1)/(k1 - k2) + b1);
 
 Console.WriteLine($"Координата точки пересечения прямых равна {x} и {y}");
