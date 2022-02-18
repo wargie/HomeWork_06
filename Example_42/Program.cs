@@ -1,7 +1,7 @@
 ﻿// 42.Определить сколько чисел больше 0 введено с клавиатуры
 
 Console.Write("Введите колличество чисел: ");
-var volume = int.Parse(Console.ReadLine());
+int volume = int.Parse(Console.ReadLine());
 int count = 0;
 
 for (int i = 0; i < volume; i++)
